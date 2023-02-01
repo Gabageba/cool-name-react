@@ -1,0 +1,55 @@
+.customCheckbox {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 10px;
+
+  .input {
+    display: none;
+  }
+
+  .input + .label,
+  .input + .label::after {
+    transition: 0.13s ease-in-out;
+  }
+
+
+  .input + .label {
+    display: inline-block;
+    position: relative;
+    width: 35px;
+    height: 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #333333;
+    border: 2px solid #7462e0;
+  }
+
+  .input + .label::after {
+    border-radius: 50%;
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 14px;
+    height: 14px;
+    background-color: #ffecdb;
+  }
+
+  .input:checked + .label::after {
+    left: 18px;
+    background-color: #ffecdb;
+  }
+
+  .input:checked + .label {
+    background-color: #7462e0;
+  }
+
+  .name {
+    color: #ffecdb;
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
