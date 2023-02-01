@@ -1,0 +1,36 @@
+.keyBind {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 10px;
+
+  .currentKey {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 35px;
+    min-height: 35px;
+    overflow: hidden;
+    //border-radius: 30px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #333333;
+    border: 2px solid #7462e0;
+
+    div {
+      color: #ffecdb;
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+
+  .name {
+    color: #ffecdb;
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
+
