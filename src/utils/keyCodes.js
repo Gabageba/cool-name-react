@@ -69,7 +69,7 @@ const keyCodes = {
   '[': 219,
   ']': 221,
   '|': 220,
-  "'": 222,
+  '\'': 222,
   '/': 191,
   '`': 192,
   'F1': 112,
@@ -93,15 +93,12 @@ const keyCodes = {
   'nm6': 102,
   'nm7': 103,
   'nm8': 104,
-  'nm9': 105
+  'nm9': 105,
 }
 
 export const keyValidator = (keyCode) => {
-  debugger
-  console.log(keyCode, 'keyCode')
   let currentKey = 'und'
   for (let key in keyCodes) {
-    console.log(keyCodes[key], 'keyCodes[key]')
     if (keyCode === keyCodes[key]) {
       currentKey = key
     }
