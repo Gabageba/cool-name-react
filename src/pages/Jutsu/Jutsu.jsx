@@ -3,13 +3,18 @@ import styles from './Jutsu.module.scss'
 import Input from '../../components/Input/Input'
 import KeyBind from '../../components/KeyBind/KeyBind'
 import {useJutsuStore} from '../../utils/storage'
-import {AUTOPLAY_EPISODE_NAME, NEXT_EPISODE_NAME, SKIP_ENDING_NAME, SKIP_OPENING_NAME} from '../../utils/const'
+import {
+  AUTOPLAY_EPISODE_NAME,
+  FULLSCREEN_BIND,
+  NEXT_EPISODE_NAME,
+  SKIP_ENDING_NAME,
+  SKIP_OPENING_NAME
+} from '../../utils/const'
+import {keyValidator} from '../../utils/keyCodes'
 
 const Jutsu = () => {
 
   const [settings, setSettings, isPersistent, error] = useJutsuStore()
-
-  console.log(settings)
   return (
     <div className={styles.jutsu}>
       <Input id={SKIP_OPENING_NAME} name={'Автопропуск опенинга'} setting={settings[SKIP_OPENING_NAME]} setSetting={setSettings}/>
@@ -17,7 +22,7 @@ const Jutsu = () => {
       <Input id={NEXT_EPISODE_NAME} name={'Автозапуск следующей серии'} setting={settings[NEXT_EPISODE_NAME]} setSetting={setSettings}/>
       <Input id={AUTOPLAY_EPISODE_NAME} name={'Автопроигрывание серии'} setting={settings[AUTOPLAY_EPISODE_NAME]} setSetting={setSettings}/>
       <div className={'line'}/>
-      <KeyBind button={'f'} name={'Открытие в полноэкранном режиме'}/>
+      <KeyBind button={keyValidator(settings[FULLSCREEN_BIND])} name={'Открытие в полноэкранном режиме'} setSetting={setSettings} id={FULLSCREEN_BIND}/>
     </div>
   )
 }

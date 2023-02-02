@@ -17,12 +17,14 @@
     border-radius: 50%;
     background-color: #333333;
     border: 2px solid #7462e0;
+    user-select: none;
 
     div {
       color: #ffecdb;
       font-size: 18px;
       font-weight: 600;
       text-transform: uppercase;
+
     }
   }
 

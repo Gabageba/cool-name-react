@@ -13,7 +13,7 @@ const INITIAL_JUT_SU_VALUE = {
   [SKIP_ENDING_NAME]: true,
   [NEXT_EPISODE_NAME]: true,
   [AUTOPLAY_EPISODE_NAME]: true,
-  [FULLSCREEN_BIND]: 'KeyF'
+  [FULLSCREEN_BIND]: 70
 };
 
 export const changeStorage = (setSetting, key, value) => {
