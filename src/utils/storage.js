@@ -24,6 +24,14 @@ const INITIAL_ANIME_GO_VALUE = {
   [PREV_EPISODE_BIND]: 65,
 }
 
+export const validateKeyBind = (settings, currentKey, id) => {
+  for (let key in settings) {
+    if (key !== id && settings[key] === currentKey) {
+      return false
+    }
+  }
+  return true
+}
 
 export const changeStorage = (setSetting, key, value) => {
   setSetting(prevState => {
