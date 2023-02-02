@@ -5,8 +5,12 @@
   "author": "Gabageba",
   "content_scripts": [
     {
+      "matches": ["https://*.animego.org/*"],
+      "js": ["extensions/jquery-3.6.3.js", "scripts/animego.js"]
+    },
+    {
       "matches": ["https://*.jut.su/*"],
-      "js": ["static/js/jutsu.js"]
+      "js": ["extensions/jquery-3.6.3.js", "scripts/jutsu.js"]
     }
   ],
   "action": {

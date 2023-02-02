@@ -2,10 +2,20 @@ import React, {useState} from 'react'
 import styles from './KeyBind.module.scss'
 import {changeStorage} from '../../utils/storage'
 
-const KeyBind = ({name, button, setSetting, id}) => {
+const KeyBind = ({name, button, setSetting, id, settings}) => {
   const [isEdit, setIsEdit] = useState(false)
+
+  const validateKeyBind = (settings, currentKey, id) => {
+    for (let key in settings) {
+      if (key !== id && settings[key] === currentKey) {
+        return false
+      }
+    }
+    return true
+  }
+
   document.body.onkeyup = function(event) {
-    if (isEdit) {
+    if (isEdit && validateKeyBind(settings, event.keyCode, id)) {
       changeStorage(setSetting, id, event.keyCode)
       setIsEdit(false)
     }

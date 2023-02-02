@@ -22,7 +22,7 @@ const Jutsu = () => {
       <Input id={NEXT_EPISODE_NAME} name={'Автозапуск следующей серии'} setting={settings[NEXT_EPISODE_NAME]} setSetting={setSettings}/>
       <Input id={AUTOPLAY_EPISODE_NAME} name={'Автопроигрывание серии'} setting={settings[AUTOPLAY_EPISODE_NAME]} setSetting={setSettings}/>
       <div className={'line'}/>
-      <KeyBind button={keyValidator(settings[FULLSCREEN_BIND])} name={'Открытие в полноэкранном режиме'} setSetting={setSettings} id={FULLSCREEN_BIND}/>
+      <KeyBind button={keyValidator(settings[FULLSCREEN_BIND])} name={'Открытие в полноэкранном режиме'} setSetting={setSettings} id={FULLSCREEN_BIND} settings={settings}/>
     </div>
   )
 }
