@@ -127,7 +127,6 @@ getOptions()
 
 $(window).on('load', () => {
   setTimeout(() => {
-    console.log(options)
     reloadKeyPress()
     handleStorageChange(options)
     if (options.autoplayEpisode) {
