@@ -63,6 +63,7 @@ const watchButtonValidator = (value) => {
   return (
     value.nodeName === 'A' &&
     !value.classList.contains('btn-sm') &&
+    value.children[1] &&
     value.children[1].innerText === 'Смотреть онлайн' &&
     value.classList.contains('btn-primary')
   )
