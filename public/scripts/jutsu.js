@@ -74,11 +74,9 @@ const addObserver = (key) => {
 
 const handleStorageChange = (storage) => {
   for (let key in storage) {
-    if (key === 'fullscreenBind') {
-      reloadKeyPress()
-    } else if (storage[key]) {
+    if (storage[key]) {
       addObserver(key)
-    } else {
+    } else if (!storage[key]) {
       deleteObserver(key)
     }
   }
