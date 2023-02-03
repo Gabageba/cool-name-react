@@ -6,7 +6,7 @@ let options
 
 let defaultJutsuStorage = {
   autoplayEpisode: true,
-  fullscreenBind: 70,
+  fullscreenBind: 71,
   nextEpisode: true,
   skipEnding: true,
   skipOpening: true,
@@ -92,8 +92,7 @@ chrome.storage.onChanged.addListener((changes) => {
 })
 
 const reloadKeyPress = () => {
-  $('body').off('keyup')
-
+  $('body').unbind()
   $('body').keyup((event) => {
     if (event.keyCode === options.fullscreenBind) {
       $('.vjs-fullscreen-control').click()
